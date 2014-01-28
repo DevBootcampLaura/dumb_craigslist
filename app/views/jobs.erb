@@ -1,6 +1,10 @@
 <div class="container">
 <h1>Welcome to Jobs Catagory</h1>
 <a href="create">Create a post!</a>
+<form name="update" action="/update_post" method="post">
+  Admin Password: <input type="text" name="admin">
+  <input type="submit" value="Edit">
+</form>
 <h2>Here is a list of job postings</h2>
 
   <% Post.where(category_id: 1).each do |p| %>
