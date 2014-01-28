@@ -2,8 +2,12 @@
 <h1>Welcome to Jobs Catagory</h1>
 <a href="create">Create a post!</a>
 <h2>Here is a list of job postings</h2>
-<ul>
-  <li>posts...</li>
+
+  <% Post.where(category_id: 1).each do |p| %>
+    <ul>
+      <li><a href="/show/<%= p.id %>"><%= p.title %></a></li>
+    </ul>
+  <% end %>
 </ul>
 <br>
 </div>
