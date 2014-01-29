@@ -18,7 +18,7 @@ post '/create_post' do
   redirect "/show_admin/#{p.admin}"
 end
 
-get '/show/:id' do
+get '/jobs/:id' do
   @post = Post.where(id: params[:id]).first
   erb :show
 end
@@ -42,5 +42,5 @@ post '/edit_post' do
   p.content = params['content'] if params['content'] != ""
   p.email = params['email'] if params['email'] != ""
   p.save
-  redirect "/show/#{p.id}"
+  redirect "/jobs/#{p.id}"
 end

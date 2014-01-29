@@ -9,7 +9,7 @@
 
   <% Post.where(category_id: 1).each do |p| %>
     <ul>
-      <li><a href="/show/<%= p.id %>"><%= p.title %></a></li>
+      <li><a href="/jobs/<%= p.id %>"><%= p.title %></a></li>
     </ul>
   <% end %>
 </ul>
