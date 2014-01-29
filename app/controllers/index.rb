@@ -35,3 +35,12 @@ post '/update_post' do
     "Admin password does not exist."
   end
 end
+
+post '/edit_post' do
+  p = Post.where(admin: params['admin_id']).first
+  p.title = params['title'] if params['title'] != ""
+  p.content = params['content'] if params['content'] != ""
+  p.email = params['email'] if params['email'] != ""
+  p.save
+  redirect "/show/#{p.id}"
+end

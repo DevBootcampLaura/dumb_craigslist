@@ -11,5 +11,17 @@
 Remember your admin password! You will need it to edit this post!<br>
 Password: <%= @post.admin %><br><br>
 
+<h3>Edit This Form</h3>
+<form name="edit" action="/edit_post" method="post">
+  Position: <input type="text" name="title"><br>
+  Description:<br>
+  <textarea cols="40" rows="4" name="content"></textarea><br>
+  Email: <input type="text" name="email"><br>
+  <input type="radio" name="admin_id" value="<%= @post.admin %>">Are you sure you want to edit?<br>
+  <input type="submit" value="Edit Post">
+
+
+</form><br>
+
 <a href="/">Return Home</a>
 </div>
